@@ -32,6 +32,9 @@ if ($use_recaptcha) {
 }
 require_once("lib/detectbrowserlanguage.php");
 require_once("lib/vendor/PHPMailer/PHPMailerAutoload.php");
+if ($use_sms) {
+    require_once("lib/vendor/esendex-php-sdk/src/autoload.php");
+}
 if ($use_pwnedpasswords) {
     require_once("lib/vendor/ron-maxweb/pwned-passwords/src/PwnedPasswords/PwnedPasswords.php");
 }
