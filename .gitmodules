@@ -1,0 +1,3 @@
+[submodule "lib/vendor/esendex-php-sdk"]
+	path = lib/vendor/esendex-php-sdk
+	url = https://github.com/esendex/esendex-php-sdk.git
