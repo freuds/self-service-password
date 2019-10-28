@@ -385,7 +385,7 @@ function change_password( $ldap, $dn, $password, $ad_mode, $ad_options, $samba_m
     # Commit modification on directory
 
     # Special case: AD mode with password changed as user
-    if ( $ad_mode and $who_change_password === "user" ) {
+    if ( $ad_mode && $who_change_password == "user" ) {
         # The AD password change procedure is modifying the attribute unicodePwd by
         # first deleting unicodePwd with the old password and them adding it with the
         # the new password
@@ -403,7 +403,6 @@ function change_password( $ldap, $dn, $password, $ad_mode, $ad_options, $samba_m
                 "values" => array($password),
             ),
         );
-
         $bmod = ldap_modify_batch($ldap, $dn, $modifications);
     } else {
         # Else just replace with new password
