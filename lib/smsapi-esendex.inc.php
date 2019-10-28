@@ -51,13 +51,13 @@ function send_sms_by_api($mobile, $message) {
     // Send SMS
     $service = new \Esendex\DispatchService($authentication);
     $result = $service->send($esendex_message);
-    print $result->id();
+    //print $result->id();
 
     // Get SMS status
     $headerService = new \Esendex\MessageHeaderService($authentication);
     $messageStatus = $headerService->message($result->id());
     $returnStatus = (string)$messageStatus->status();
-    print $messageStatus->status();
+    //print $messageStatus->status();
 
     if ( ! in_array(trim($returnStatus), $defaultStatus) )
     {
